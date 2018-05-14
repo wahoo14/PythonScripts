@@ -1,5 +1,8 @@
 import pandas as pd
 
+###Generic python script used to join two sheets on user specified-columns and by a user-specified join type.  
+###Includes some error handling and outputs the joined spreadsheet.
+
 def getInputs():
 	while 1 == 1:
 		joinType = raw_input("Join type (left, inner, or outer)?: ").lower()
