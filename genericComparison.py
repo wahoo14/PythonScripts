@@ -62,5 +62,6 @@ def program():
 	leftSheet, rightSheet, leftJoinCol, rightJoinCol, joinType = getInputs()[:]
 	cleanedLeft, cleanedRight = dataCleanUp(leftSheet, rightSheet, leftJoinCol, rightJoinCol)[:]
 	merge(cleanedLeft, cleanedRight, leftJoinCol, rightJoinCol, joinType)
-	
-program()
+
+if __name__ == "__main__":
+	program()
