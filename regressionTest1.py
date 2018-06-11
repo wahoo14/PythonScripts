@@ -20,7 +20,7 @@ def regression1():
 	wait = WebDriverWait(driver, 10)
 	##execute test
 	driver.get(url)
-	##delliberately misspelled CLASS to fail this test
+	##deliberately misspelled CLASS to fail this test
 	searchField = wait.until(EC.presence_of_element_located((By.CLSS_NAME,'landing-search-input')))
 	searchField.clear()
 	searchField.send_keys('test')
