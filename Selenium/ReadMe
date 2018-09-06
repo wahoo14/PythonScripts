@@ -1,0 +1,3 @@
+Sample regression testing suite developed using python's selenium library.  
+fullRegression.py calls the other two scripts to run as separate test cases, includes logging functionality.
+Keys used for navigation are stored in a separate, not included .py file
