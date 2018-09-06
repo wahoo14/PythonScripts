@@ -1,0 +1,5 @@
+import pandas as pd
+
+countyData = pd.read_csv(r"C:\Users\davidayu\Misc\Python Scripts\CountyData.csv",encoding='cp1252')
+
+print(countyData.head())
