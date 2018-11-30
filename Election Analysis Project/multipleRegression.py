@@ -9,19 +9,21 @@ from sklearn.model_selection import train_test_split
 import statsmodels.api as sm
 
 #parse election data
-electionData = pd.read_csv(r"C:\Users\davidayu\Misc\Python Scripts\2016 Election Analysis Project\Data Files\2016ElectionData.csv",encoding='cp1252')
+electionData = pd.read_csv(r"C:\Users\dyu\Documents\Other_Scripts\PythonScripts\Election Analysis Project\DataFiles\2016ElectionData.csv",encoding='cp1252')
 electionData = electionData[["combined_fips","per_dem"]]
 
 #parse demographic data
-data = pd.read_csv(r"C:\Users\davidayu\Misc\Python Scripts\2016 Election Analysis Project\Data Files\ACS_16_5YR_DP02_with_ann.csv",encoding='cp1252', low_memory = False)
+data = pd.read_csv(r"C:\Users\dyu\Documents\Other_Scripts\PythonScripts\Election Analysis Project\DataFiles\ACS_16_5YR_DP02_with_ann.csv",encoding='cp1252', low_memory = False)
 
 #drop columns
 demoColumns = data.columns.values
 
 #remove margin of error columns
 errorColumns = [a for a in demoColumns if "Margin of Error" in a]
-demoColumns = [b for b in demoColumns if b not in errorColumns]
-data = data[demoColumns]
+estimateColumns = [c for c in demoColumns if "Estimate;" in c]
+demoColumns1 = [b for b in demoColumns if b not in errorColumns]
+demoColumns2 = [d for d in demoColumns1 if d not in estimateColumns]
+data = data[demoColumns2]
 
 #merge Datasets
 electionData["combined_fips"]=electionData["combined_fips"].astype(str)

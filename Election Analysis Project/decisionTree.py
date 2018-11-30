@@ -12,8 +12,8 @@ def voteOutcome(gop, dem):
 		return 0
 
 def main():
-	countyData = pd.read_csv(r"C:\Users\davidayu\Misc\Python Scripts\CountyData.csv",encoding='cp1252')
-	electionData = pd.read_csv(r"C:\Users\davidayu\Misc\Python Scripts\2016ElectionData.csv",encoding='cp1252')
+	countyData = pd.read_csv(r"C:\Users\dyu\Documents\Other_Scripts\PythonScripts\Election Analysis Project\DataFiles\CountyData.csv",encoding='cp1252')
+	electionData = pd.read_csv(r"C:\Users\dyu\Documents\Other_Scripts\PythonScripts\Election Analysis Project\DataFiles\2016ElectionData.csv",encoding='cp1252')
 	#Drop alaska (incomplete county election data)
 	countyData = countyData[countyData['State']!='AK']
 	electionData = electionData[electionData['state_abbr']!='AK']
